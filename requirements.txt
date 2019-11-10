@@ -1,0 +1,10 @@
+Flask
+
+gunicorn
+
+
+Flask-SQLAlchemy
+flask-mysqldb
+
+# Extensions.
+flask-debugtoolbar

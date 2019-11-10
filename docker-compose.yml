@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  mysqldb:
+    image: 'mysql:5.7'
+    env_file:
+      - '.env'
+    volumes:
+      - 'mysql:/var/lib/mysql'
+    #ports:
+    #  - '3306:3306'
+
+
+  website:
+    build: .
+    command: >
+      gunicorn -b 0.0.0.0:8000
+        --access-logfile -
+        --reload
+        "appserver:gunicorn_app"
+
+    env_file:
+      - '.env'
+    links:
+      - mysqldb:mysqldb
+    volumes:
+      - '.:/inscription'
+    ports:
+      - '8001:8000'
+
+volumes:
+  mysql:

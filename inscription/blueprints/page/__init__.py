@@ -1,0 +1,1 @@
+from inscription.blueprints.page.views import page
