@@ -14,4 +14,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD gunicorn -b 0.0.0.0:8000 --access-logfile - "inscription.app:create_app()"
+CMD gunicorn -b 0.0.0.0:8000 --access-logfile - "appserver:gunicorn_app"

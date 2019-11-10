@@ -1,3 +1,8 @@
+DEBUG = True
+
+SECRET_KEY='No-so-secret-key'
+
+
 MYSQL_DATABASE_HOST	= 'mysqldb'
 MYSQL_DATABASE_PORT	= 3306
 MYSQL_DATABASE_USER	= 'inscription'
